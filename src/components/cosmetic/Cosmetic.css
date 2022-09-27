@@ -1,0 +1,12 @@
+.user-container{
+    margin: 20px;
+    padding: 20px;
+    background-color: beige;
+    width: 80%;
+}
+.cart-btn{
+    border: none;
+    padding: 15px;
+    background-color:aqua;
+    box-shadow: 2px 2px 2px black ;
+}
