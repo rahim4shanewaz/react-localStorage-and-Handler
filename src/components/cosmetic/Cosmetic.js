@@ -1,10 +1,14 @@
 import React from 'react';
+import { adToDb, removeFromCart } from '../../utilities/add-local-store';
 import './Cosmetic.css'
 
 const Cosmetic = ({user}) => {
     const {name, id, age, gender} = user;
-    const addTocart = (id) => {
-        console.log('item added', id)
+    const addToCart = (id) => {
+         adToDb(id);  
+    }
+    const removeCart = id =>{
+        removeFromCart(id);
     }
     return (
         <div className='user-container'>
@@ -12,7 +16,8 @@ const Cosmetic = ({user}) => {
             <p>id: {id}</p>
             <p>Age: {age}</p>
             <p>Gender: {gender}</p>
-            <button onClick={() => addTocart(id)} className='cart-btn'>Add to cart</button>
+            <button onClick={() => addToCart(id)} className='cart-btn'>Add to cart</button>
+            <button onClick={() => removeCart(id) } className='cart-btn'>Remove cart</button>
             
         </div>
     );
